@@ -456,10 +456,210 @@
 // Technology: coldfusion 
 // People: veryNice
 
-function search(){
-    const url="https://www.mitrahsoft.com/?technology=coldfusion&people=veryNice";
-    let res=URL(url);
-    const output=res.searchParams;
-    const val=output.get(technology);
-    console.log(val);
+// function search(){
+//     const result =document.getElementById("result");
+// const urlstring="https://www.mitrahsoft.com/?technology=coldfusion&people=veryNice";
+  
+// const url = new URL(urlstring);
+// const technology = url.searchParams.get('technology');
+// const people = url.searchParams.get('people');
+// console.log(people);
+// console.log(technology);
+// result.innerText=`Technology : ${technology}
+// People :${people}`
+
+// }
+
+// 14. Count Words in a Sentence 
+// HTML Design 
+// • Title: Word Counter 
+// • Textarea → user enters a sentence 
+// • Error div 
+// • Button: Count Words 
+// • Result div 
+// UI Example 
+// Enter Sentence 
+// [ I love javascript programming ] 
+ 
+// Error here → [ Count Words ] 
+ 
+// Result  → Total Words = 4 
+
+//  function counter(){
+// const val=document.getElementById("value").value;
+// let count=0;  
+// const cleaned =/[^a-zA-Z0-9\s]/g; 
+//     let input=cleaned.split(" ");
+// if(val==""){
+//   document.getElementsByClassName("errorDiv")[0].innerHTML= "Please enter a sentence" ;
+// }
+// if(cleaned.test(val)){
+//      res.innerText="";
+//      document.getElementsByClassName("errorDiv")[0].innerHTML="Special characters not allowed";
+// }
+
+
+// else{
+    
+// input.forEach((ele)=>{
+//     console.log(ele);
+//     count++;
+// })
+
+// document.getElementsByClassName("result")[0].textContent=`Result  → Total Words = ${count}`;
+
+// }
+//  }
+
+// 15. Palindrome Checker 
+// HTML Design 
+// • Textbox 
+// • Error div 
+// • Button 
+// • Result div 
+// Example 
+// Input → madam 
+ 
+// Result → This is a Palindrome
+// Validation Rules 
+// • Empty → Please enter a word 
+// • Numbers not allowed 
+// • Special characters not allowed 
+
+
+// function Palindrome(){
+// const val=document.getElementById("value").value  ;
+// const cleaned = /[^a-zA-Z0-9\s]/g; 
+// const res=document.getElementsByClassName("result")[0];
+
+// if(val=="" ){
+//     res.innerText="";
+//   document.getElementsByClassName("errorDiv")[0].innerHTML="* Please enter a word";
+// }
+// if(Number(val)){
+//     res.innerText="";
+//   document.getElementsByClassName("errorDiv")[0].innerHTML="* Please enter a word";
+// }
+ 
+// if(cleaned.test(val)){
+//     res.innerText="";
+//      document.getElementsByClassName("errorDiv")[0].innerHTML="Special characters not allowed";
+// }
+// else{
+//   let result="";
+//   for(let char of val) {
+//     result=char+result;
+    
+//   };
+//   if(val==result){
+//       res.innerText=`Input → ${val}
+//       Result → This is a Palindrome`;
+
+//   }
+//   else{
+//       res.innerText=`Input → ${val}
+//       Result → This is Not a Palindrome`;
+
+//   }
+ 
+    
+// }
+
+// }
+
+// 16. Count Vowels and Consonants 
+// HTML Design 
+// • Textbox 
+// • Error div 
+// • Button 
+// • Result div 
+// Output Example 
+// Input → javascript 
+ 
+// Vowels: 3 
+// Consonants: 7 
+// Validation Rules 
+// • Empty input not allowed 
+// • Numbers not allowed 
+// • Special characters not allowed
+
+// function vowel_consonants(){
+// const val=document.getElementById("value").value  ;
+// const cleaned = /[^a-zA-Z0-9\s]/g; 
+// console.log(val);
+// let vowels=0;
+// let consonants=0;
+
+// if(val==""){
+//   document.getElementsByClassName("errorDiv")[0].innerHTML="*please enter a single charater";
+// }
+// if(cleaned.test(val)){
+// document.getElementsByClassName("errorDiv")[0].innerHTML="*please enter a single charater";
+
+// }
+// else{
+    
+//    for(let char of val){
+//       if(char=='a'||char=='e'||char=='i'||char=='o'||char=='u'||char=='A'||char=='E'||char=='I'||char=='O'||char=='U'){
+//         vowels++;
+
+// }
+// else{
+ 
+//      consonants++;
+// }
+
+//    }
+  
+
+// }
+//  document.getElementsByClassName("result")[0].innerText=`Input → ${val}
+//  Vowels: ${vowels} 
+// Consonants: ${consonants}`;
+// }
+
+// 17. Remove Duplicate Elements from Array 
+// HTML Design 
+// • Textbox → input array 
+// • Error div 
+// • Button 
+// • Result div 
+// Example 
+// Input  → A,B,C,A,B,D 
+ 
+// Result → A,B,C,D
+
+function Replace(){
+const arr=document.getElementById("array-element").value;
+let originalArr=arr.split(",");
+let valuError=document.getElementsByClassName("errorDiv")[0];
+ 
+let arrvalue=[]
+
+if(arr==""){
+arrerror.innerHTML="*please enter an array value";
+
 }
+else{
+    for(let i=0;i<originalArr.length;i++){
+        let count=0;
+        for(let j=i+1;j<originalArr.length;j++){
+            if(arr[i]===arr[j]){
+                count++;
+            }
+        }
+        if(count>2){
+            arrvalue.push(originalArr[i])
+        }
+        else{
+arrvalue.push(originalArr[i])
+        }
+    }
+    console.log(arrvalue);
+
+
+}
+  document.getElementsByClassName("result")[0].innerHTML=`Non duplicated array :${arrvalue}`;
+console.log(originalArr);
+}
+
