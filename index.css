@@ -1,0 +1,48 @@
+/* body{
+      background-color:white;
+    color:black;
+
+}
+
+
+.dark_theme{
+    background-color: black;
+    color:white;
+} */
+
+
+body {
+  /* Prevent the user selecting text in the example */
+  user-select: none;
+}
+/* 
+#draggable {
+  text-align: center;
+  background: white;
+}
+#draggable1 {
+  text-align: center;
+  background: white;
+}
+
+#draggable2 {
+  text-align: center;
+  background: white;
+} */
+
+
+.dropzone {
+  width: 200px;
+  height: 80px;
+  background: rgb(43, 220, 226);
+  margin: 10px;
+  padding: 10px;
+}
+
+/* .dropzone.dragover {
+  background-color: purple;
+} */
+
+.dragging {
+  opacity: 0.5;
+}
