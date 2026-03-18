@@ -223,13 +223,39 @@
 // [Check All]  [UnCheck All]  [Toggle]
 
 
-// function checkall(value){
-//     const element=document.querySelectorAll(".checkbox-selection");
-//   element.forEach((e)=>{
-//     e.checked=true;
-// })
+// const checkall = checked => {
+//     let checkboxes = document.getElementsByClassName("checkbox-selection");
+//     for (let i = 0; i < checkboxes.length; i++) {
+//         checkboxes[i].checked = checked;
+//     }
+// };
 
+
+// const uncheckall = checked => {
+//     let checkboxes = document.getElementsByClassName("checkbox-selection");
+//     for (let i = 0; i < checkboxes.length; i++) {
+//         checkboxes[i].checked = checked;
+//     }
 // }
+//  let checked="false";
+// const toggle=()=>{
+ 
+//    let checkboxes = document.getElementsByClassName("checkbox-selection");
+//    if(checkboxes.checked!="true"){
+//         for (let i = 0; i < checkboxes.length; i++) {
+//         checkboxes[i].checked = checked;
+//     }
+//     checked=true;
+//    }
+//   else{
+//     for (let i = 0; i < checkboxes.length; i++) {
+//         checkboxes[i].checked = checked;
+//     }
+//     checked=false;
+//   }
+// }
+
+   
 
 // 7. Sum & Multiply Numbers 
 // HTML Design 
@@ -1154,39 +1180,220 @@
 // • Drag item from left box 
 // • Drop into right box
 
-let dragged1;
-const source = document.getElementById("draggable");
-source.addEventListener("dragstart", (event) => {
-dragged1 = event.target;
-});
-let dragged2;
-const source2 = document.getElementById("draggable1");
-source2.addEventListener("dragstart", (event) => {
-dragged2 = event.target;
-});
-let dragged3;
+// let dragged1;
+// const source = document.getElementById("draggable");
+// source.addEventListener("dragstart", (event) => {
+// dragged1 = event.target;
+// });
+// let dragged2;
+// const source2 = document.getElementById("draggable1");
+// source2.addEventListener("dragstart", (event) => {
+// dragged2 = event.target;
+// });
+// let dragged3;
 
-const source3= document.getElementById("draggable2");
-source3.addEventListener("dragstart", (event) => {
-dragged3 = event.target;
-});
+// const source3= document.getElementById("draggable2");
+// source3.addEventListener("dragstart", (event) => {
+// dragged3 = event.target;
+// });
 
 
-const target = document.getElementById("drop-target1");
-target.addEventListener("dragover", (event) => {
-  event.preventDefault();
-});
-target.addEventListener("drop", (event) => {
-event.preventDefault();
+// const target = document.getElementById("drop-target1");
+// target.addEventListener("dragover", (event) => {
+//   event.preventDefault();
+// });
+// target.addEventListener("drop", (event) => {
+// event.preventDefault();
 
-if (event.target.classList.contains("dropzone1")) {
-    event.target.classList.remove("dragover");
-    event.target.appendChild(dragged1);
-    // event.target.appendChild(dragged2);
-    // event.target.appendChild(dragged3);
- }
-});
+// if (event.target.classList.contains("dropzones")) {
+//     event.target.classList.remove("dragover");
+//     event.target.appendChild(dragged1);
 
+//  }
+// });
+
+// const target2 = document.getElementById("drop-target2");
+// target.addEventListener("dragover", (event) => {
+//   event.preventDefault();
+// });
+// target.addEventListener("drop", (event) => {
+// event.preventDefault();
+
+// if (event.target.classList.contains("dropzones")) {
+//     event.target.classList.remove("dragover");
+//     event.target.appendChild(dragged2);
+   
+//  }
+// });
+// const target3= document.getElementById("drop-target3");
+// target.addEventListener("dragover", (event) => {
+//   event.preventDefault();
+// });
+// target.addEventListener("drop", (event) => {
+// event.preventDefault();
+
+// if (event.target.classList.contains("dropzones")) {
+//     event.target.classList.remove("dragover");
+//     event.target.appendChild(dragged3);
+   
+//  }
+// });
+
+
+// 32. Drag & Drop Reordering List 
+// HTML Design 
+// • List of tasks 
+// 1. Task A 
+// 2. Task B 
+// 3. Task C 
+// Behaviour 
+// User should be able to drag and reorder tasks. 
+// Example 
+// Before → A B C 
+// After drag  → C A B
+
+// let dragged; 
+// document.querySelectorAll("li").forEach(li=>{ 
+//   li.ondragstart = ()=> dragged = li; 
+//   li.ondragover = e=> e.preventDefault(); 
+//   li.ondrop = function(){ 
+//     this.parentNode.insertBefore(dragged, this); 
+//   } 
+// }); 
+
+// 33. Drag File Upload Area 
+// HTML Design ----------------------- 
+//  Drag file here 
+//  or click to upload ----------------------- 
+// Behaviour 
+// • User drags image file 
+// • Display file name 
+// • Validate image only
+
+// 34. Kanban Board Drag & Drop 
+// HTML Design 
+// TODO          IN PROGRESS          DONE ---------------------------------------- 
+// Task 1 
+// Task 2 
+// Behaviour 
+// User can drag task between columns 
+// Example 
+// TODO -> IN PROGRESS 
+
+// document.querySelectorAll('.task').forEach(task => {
+//   task.addEventListener('dragstart', e => {
+//     e.dataTransfer.setData('text/plain', e.target.dataset.taskId);
+//     setTimeout(() => e.target.classList.add('is-dragging'), 0); 
+//   });
+// });
+// document.querySelectorAll('.task').forEach(task => {
+//   task.addEventListener('dragend', e => {
+//     e.target.classList.remove('is-dragging');
+//   });
+// });
+// document.querySelectorAll('.column').forEach(column => {
+//   column.addEventListener('dragover', e => {
+//     e.preventDefault();
+//   });
+// });
+// document.querySelectorAll('.column').forEach(column => {
+//   column.addEventListener('drop', e => {
+//     e.preventDefault();
+//     const taskId = e.dataTransfer.getData('text/plain');
+//     const draggableElement = document.querySelector(`[data-task-id="${taskId}"]`);
+//     column.appendChild(draggableElement);
+//   });
+// });
+
+
+
+// 35. Infinite Scroll List 
+// HTML Design 
+// Item 1 
+// Item 2 
+// Item 3 
+// ... 
+// Behaviour 
+// • Load 10 items initially 
+// • When user reaches bottom 
+// • Load 10 more automatically
+
+// let count = 0; 
+// function load(){ 
+// for(let i=0;i<10;i++){ 
+//     let li = document.createElement("li"); 
+//     li.className="style";
+//     li.innerText = "Item " + (++count); 
+//     list.appendChild(li); 
+//   } 
+// } 
+// load(); 
+// window.onscroll = ()=>{ 
+//   if(window.innerHeight + window.scrollY >= document.body.offsetHeight){ 
+//     load(); 
+//   } 
+// }; 
+
+// 36. Infinite Scroll Image Gallery 
+// HTML Design 
+// Image Grid 
+ 
+// [img] [img] [img] 
+// [img] [img] [img] 
+// Behaviour 
+// Scroll down → load more images
+
+// let gal=document.getElementById('image-gal');
+// function load(){ 
+// for(let i=0;i<10;i++){ 
+//     let img= document.createElement('img'); 
+//     img.src="https://picsum.photos/300/200"
+ 
+//     gal.appendChild(img); 
+//   } 
+// } 
+// load(); 
+// window.onscroll = ()=>{ 
+//   if(window.innerHeight + window.scrollY >= document.body.offsetHeight){ 
+//     load(); 
+//   } 
+// }; 
+
+// 37. Infinite Scroll API Loader 
+// HTML Design 
+// User List 
+ 
+// Name 
+
+// Email 
+// Phone 
+// Behaviour 
+// Fetch from API 
+// Example 
+// https://jsonplaceholder.typicode.com/users 
+// Load more users on scroll. 
+
+
+// let gal=document.getElementById('users');
+// async function load(){ 
+//  fetch('https://jsonplaceholder.typicode.com/users')
+// .then(res=>res.json()).then((val)=>{
+//     console.log(JSON.stringify(val));
+//     val.forEach(element => {
+//         let child=document.createElement('div');
+//         child.className="userList"
+//         let result=`name:-${element.name}  email:-${element.email} phone:-${element.phone}`
+//         child.innerText=JSON.stringify(result);
+//         gal.appendChild(child)
+//   })
+//   })
+//   }
+// load(); 
+// window.onscroll = ()=>{ 
+//   if(window.innerHeight + window.scrollY >= document.body.offsetHeight){ 
+//     load(); 
+//   } 
+// }; 
 
 // 38. Debounce Search Input 
 // HTML Design 
@@ -1246,3 +1453,102 @@ if (event.target.classList.contains("dropzone1")) {
 //     },500)
      
 // })
+ 
+// let box = document.getElementById("box"); 
+// box.ondragover = e => e.preventDefault(); 
+// box.ondrop = e => { 
+//   e.preventDefault(); 
+//   let file = e.dataTransfer.files[0]; 
+//   if(file.type.startsWith("image/*")){ 
+//     result.innerText = file.name; 
+//   } else { 
+//     Result.innerText = "Only image allowed"; 
+//   } 
+// }; 
+
+
+// 40. Auto Suggest Search 
+// HTML Design 
+// Search Country → [ Ind ] 
+ 
+// Suggestions 
+ 
+// India 
+// Indonesia 
+// Indigo 
+// Behaviour 
+// • Typing should show suggestions 
+// • Use debounce
+
+// let countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla",
+//   "Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria",
+//   "Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize",
+//   "Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil",
+//   "British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia",
+//   "Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad",
+//   "Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia",
+//   "Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica",
+//   "Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea",
+//   "Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France",
+//   "French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana",
+//   "Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea",
+//   "Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan",
+//   "Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives",
+//   "Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands",
+//   "Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland",
+//   "Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone",
+//   "Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden",
+//   "Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Tuvalu","Uganda","Ukraine",
+//   "United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+// let timeout;
+// let value="";
+// const val=document.getElementById("searchBox").addEventListener('input',(a)=>{
+//     let result=document.getElementById('res');
+//     clearTimeout(timeout);
+//     timeout=setTimeout(()=>{
+//         let out=a.target.value;
+//         let out1=out.toLowerCase()
+//         countries.forEach((e)=>{
+//           let a= e.toLowerCase()
+//            if(a.includes(out1)){
+//              console.log(e);
+//              value+=e+"\n"
+
+//         }
+        
+
+//         })
+       
+//         result.innerText=`Typing → ${out}
+//         ${value}.  `
+//         value=value.innerText="";
+       
+
+//     },500)
+     
+// })
+
+// 41. Basic Image Slider 
+// HTML Design 
+// [ < ]   Image   [ > ] 
+// Behaviour 
+// Click next/prev to change image. 
+// let slideIndex = 1;
+// showSlides(slideIndex);
+// function plusSlides(n) {
+//   showSlides(slideIndex += n);
+// }
+// function showSlides(n) {
+//   let i;
+//   let slides = document.getElementsByClassName("mySlides");
+//   if (n > slides.length){
+//   slideIndex = 1 
+//   }
+//   if (n < 1) 
+//   {slideIndex = slides.length
+//   }
+//   for (i = 0; i < slides.length; i++) {
+//     slides[i].style.display = "none";  
+//   }
+//  slides[slideIndex-1].style.display = "block";  
+// }

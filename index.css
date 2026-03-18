@@ -9,40 +9,84 @@
     background-color: black;
     color:white;
 } */
-
-
-body {
-  /* Prevent the user selecting text in the example */
-  user-select: none;
-}
 /* 
+ body {
+
+   user-select: none;
+} 
+#parent{
+  display: flex;
+  flex-direction:row;
+}
+
 #draggable {
   text-align: center;
-  background: white;
+
 }
 #draggable1 {
   text-align: center;
-  background: white;
+ 
 }
 
 #draggable2 {
   text-align: center;
-  background: white;
-} */
+
+} 
 
 
-.dropzone {
+.dropzones{
   width: 200px;
-  height: 80px;
+  height: 40px;
   background: rgb(43, 220, 226);
   margin: 10px;
   padding: 10px;
-}
-
-/* .dropzone.dragover {
-  background-color: purple;
 } */
-
-.dragging {
-  opacity: 0.5;
+#box{
+  border:2px dashed;
+  padding:20px;
 }
+
+.kanban-board{
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  
+}
+
+.column{
+  height:150px;
+  width:200px;
+  border:2px solid black;
+
+}
+img{
+  height: 300px;
+  width:300px
+}
+#image-gal{
+  display: grid;
+  grid-template: 300px 300px/300px 300px;
+}
+
+.style{
+  height: 100px;
+  width: 50px;
+  border:2px solid black;
+}
+.userList{
+  height: 100px;
+  width: 300px;
+ 
+  
+}
+
+/* 41 */
+#parent{
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+}
+
+
