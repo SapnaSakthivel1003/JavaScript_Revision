@@ -1533,6 +1533,7 @@
 // [ < ]   Image   [ > ] 
 // Behaviour 
 // Click next/prev to change image. 
+
 // let slideIndex = 1;
 // showSlides(slideIndex);
 // function plusSlides(n) {
@@ -1552,3 +1553,440 @@
 //   }
 //  slides[slideIndex-1].style.display = "block";  
 // }
+
+// 42. Auto Image Slider 
+// HTML Design 
+// Image Banner 
+// Behaviour 
+// Images automatically change every → 3 seconds 
+
+// let slideIndex = 1;
+// showSlides(slideIndex);
+// function plusSlides(n) {
+//   showSlides(slideIndex += n);
+// }
+// setInterval(()=>{
+//  plusSlides(1) ;
+
+// },3000)
+
+// function showSlides(n) {
+//   let i;
+//   let slides = document.getElementsByClassName("mySlides");
+//   if (n > slides.length){
+//   slideIndex = 1 
+//   }
+//   if (n < 1) 
+//   {slideIndex = slides.length
+//   }
+//   for (i = 0; i < slides.length; i++) {
+//     slides[i].style.display = "none";  
+//   }
+//  slides[slideIndex-1].style.display = "block";  
+// }
+
+// 43. Slider with Dots Navigation 
+// HTML Design 
+// [ Image ] 
+ 
+// • • • • 
+// Behaviour 
+// Click dot → change image.
+
+// let slideIndex = 1;
+// showSlides(slideIndex);
+
+// function currentSlide(n) {
+//   showSlides(slideIndex = n);
+// }
+
+// function showSlides(n) {
+//   let i;
+// let slides = document.getElementsByClassName("mySlides");
+//  let dots = document.getElementsByClassName("dot");
+//   if (n > slides.length){
+//   slideIndex = 1 
+//   }
+//   if (n < 1) 
+//   {slideIndex = slides.length
+//   }
+//   for (i = 0; i < slides.length; i++) {
+//     slides[i].style.display = "none";  
+//   }
+// for (i = 0; i < dots.length; i++) {
+//     dots[i].className = dots[i].className.replace(" active", "");
+//   }
+//  slides[slideIndex-1].style.display = "block"; 
+//   dots[slideIndex-1].className += " active"; 
+// }
+
+// 44. Modal Popup (Basic) 
+// HTML Design 
+// [ Open Modal ] 
+// Click → --------------------- 
+//    Modal Title 
+ 
+//    Hello User 
+ 
+//    [Close] ---------------------
+
+// const pop=document.getElementById("pop-up");
+// const open=document.getElementsByClassName("open-btn")[0];
+// const close=document.getElementsByClassName('close-btn')[0];
+
+// open.addEventListener('click',()=>{
+//     pop.showModal();
+    
+// })
+// close.addEventListener('click',()=>{
+//     pop.close();
+    
+// })
+
+// 45. Modal Popup Close Methods 
+// Behaviour 
+// Modal should close when 
+// • Clicking close button 
+// • Clicking outside modal 
+// • Pressing ESC key
+
+// const pop=document.getElementById("pop-up");
+// const open=document.getElementsByClassName("open-btn")[0];
+// const close=document.getElementsByClassName('close-btn')[0];
+
+// open.addEventListener('click',()=>{
+//     pop.showModal();
+    
+// })
+// close.addEventListener('click',()=>{
+//     pop.close();
+    
+// })
+
+// pop.addEventListener('click',(e)=>{
+//     if(e.target==pop){
+//         pop.close();
+//     }
+// })
+
+// 46. Login Modal Popup 
+// HTML Design 
+// [ Login ] 
+// Modal 
+// Email 
+// Password 
+ 
+// [ Login ] 
+// Validation required.
+
+// const pop=document.getElementById("pop-up");
+// const open=document.getElementsByClassName("open-btn")[0];
+// const close=document.getElementsByClassName('close-btn')[0];
+
+// open.addEventListener('click',()=>{
+//     pop.showModal();
+    
+// })
+// close.addEventListener('click',()=>{
+//      res.innerText="";
+//      error.innerText=""
+//     pop.close();
+   
+    
+// })
+
+// pop.addEventListener('click',(e)=>{
+//     if(e.target==pop){
+//         pop.close();
+//     }
+// })
+
+// const validate=()=>{
+//     const mail=document.getElementById("mail").value ;
+//     const pass=document.getElementById("mail").value ;
+//     let error=document.getElementsByClassName("error")[0];
+//     let res=document.getElementsByClassName("res")[0];
+//     if(mail=="" && pass==""){
+//         res.innerText=""
+//         error.innerText="* please enter  All the feilds"
+//     }else{
+//         error.innerText=""
+//            res.innerText="login done"
+//     }
+
+
+// }
+
+// 47. OTP Input UI 
+// HTML Design 
+// [ ] [ ] [ ] [ ] [ ] [ ] 
+// Behaviour 
+// • Each box accepts 1 digit 
+// • Auto move to next box 
+// • Backspace goes to previous. 
+
+// 49. Pagination (Basic) 
+// HTML Design 
+// User List 
+ 
+// Item 1 
+// Item 2 
+// Item 3 
+ 
+// Bottom 
+// Prev  1  2  3  4  Next 
+// Behaviour 
+// Show 10 items per page
+
+// const listItems = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]; // Data
+// let currentPage = 1;
+// let rows = 5; // Items per page
+
+// function displayList(items, wrapper, rowsPerPage, page) {
+//     wrapper.innerHTML = ""; // Clear old items
+//     page--; // Adjust for zero-based index
+
+//     let start = rowsPerPage * page;
+//     let end = start + rowsPerPage;
+//     let paginatedItems = items.slice(start, end);
+
+//     paginatedItems.forEach(item => {
+//         let itemElement = document.createElement("div");
+//         itemElement.innerText = item;
+//         wrapper.appendChild(itemElement);
+//     });
+// }
+
+
+// 51. Debounce vs Throttle Scroll Logger 
+// HTML Design 
+// • Large scrollable page 
+// • Console log scroll position 
+// Behaviour 
+// • Implement Debounce version 
+// • Implement Throttle version 
+// • Compare results. 
+// Example 
+// Scroll Position: 450px
+
+//  function debounce(callbackFn, limit) {
+//     let timeout;                  
+//     return function () { 
+//         clearTimeout(timeout);
+//         timeout=setTimeout(()=>{
+//             callbackFn();
+//         },limit)          
+       
+//     }
+// }
+// let handleScroll1=debounce(()=>{
+//     console.log("scroll position debounce :"+window.scrollY)
+// },300) ;
+
+// window.addEventListener("scroll",handleScroll1);
+
+
+//  function throttle (callbackFn, limit) {
+//     let wait = false;                  
+//     return function () {              
+//         if (!wait) {                  
+//             callbackFn();           
+//             wait = true;               
+//             setTimeout(function () {   
+//                 wait = false;          
+//             }, limit);
+//         }
+//     }
+// }
+// let handleScroll=throttle(()=>{
+//     console.log("scroll position throttle :"+window.scrollY)
+// },300) ;
+
+// window.addEventListener("scroll",handleScroll);
+
+// 52
+
+// let images = document.querySelectorAll(".lazy"); 
+// let observer = new IntersectionObserver(entries => { 
+//     entries.forEach(entry => { 
+//         if(entry.isIntersecting){ 
+//             let img = entry.target; 
+//             img.src = img.dataset.src; 
+//             observer.unobserve(img); 
+//         } 
+//     }); 
+// }); 
+// images.forEach(img => observer.observe(img));
+
+ 
+// 54.Local Storage Form Auto Save 
+// HTML Design 
+// Name 
+// Email 
+// Message 
+// Behaviour 
+// • When user types → automatically save to localStorage 
+// • When page refreshes → restore form values.
+
+// function removevalue(){
+//     localStorage.removeItem("val1");
+//     localStorage.removeItem("val2");
+//     localStorage.removeItem("val3");
+// }
+// window.onload =()=> {
+//     const name=document.getElementById("savevalue");
+//     const email=document.getElementById("savevalue1");
+//     const mess=document.getElementById("savevalue2")
+//     name.addEventListener('input',(e)=>{
+//         let val1=e.target.value;
+//         localStorage.setItem("val1",JSON.stringify(val1));
+
+//     })
+//     email.addEventListener('input',(e)=>{
+//         let val2=e.target.value;
+//         localStorage.setItem("val2",JSON.stringify(val2));
+
+//     })
+
+//     mess.addEventListener('input',(e)=>{
+//         let val3=e.target.value;
+//         localStorage.setItem("val3",JSON.stringify(val3));
+
+//     })
+    
+//     const savedValue= localStorage.getItem('val1');
+//     const savedValue1= localStorage.getItem('val2');
+//     const savedValue2= localStorage.getItem('val3');
+    
+
+ 
+//     if (savedValue) {
+//        name.value=savedValue
+//         email.value = savedValue1;
+//         mess.value=savedValue2;
+       
+//     }
+// };
+
+
+// 55. API Request Loader with Retry 
+// HTML Design 
+// [ Fetch Data ] → Result Area 
+// Behaviour 
+// • Show loading spinner 
+// • If API fails → retry 3 times 
+// • If still fails → show error. 
+// Example 
+// Loading... 
+// Retrying request... 
+// Error: Failed after 3 attempts 
+
+// 56. Search with Highlighted Matches 
+// HTML Design 
+// Search: [ react ] 
+ 
+// Articles List 
+// Behaviour 
+// Text → Learn React and JavaScript 
+// Should become → Learn <mark>React</mark> and JavaScript
+
+// const searchInput = document.getElementById("search-input");
+// const contentElement = document.getElementById("content");
+// const originalContent = contentElement.innerHTML;
+// searchInput.addEventListener("input", function() {
+//     const searchTerm = this.value.trim();
+//     contentElement.innerHTML = originalContent;
+//  if (searchTerm.length === 0) {
+//         return;    }
+// const regex = new RegExp(`(${searchTerm})`, "gi"); 
+//     const newHTML = contentElement.innerHTML.replace(regex, (match) => `<mark>${match}</mark>`); 
+//     contentElement.innerHTML = newHTML;
+// })
+
+// 58. Multi Step Form Wizard 
+// HTML Design 
+// Step 1: Personal Info 
+// Step 2: Address 
+// Step 3: Review 
+// UI 
+// [Next] [Previous] 
+// Behaviour 
+// • Validate each step 
+// • Save progress 
+// • Prevent skipping steps.
+
+
+
+// 59. Detect Internet Connection Status 
+// HTML Design 
+// Connection Status 
+ 
+// Online 
+// Offline 
+// Behaviour 
+// Use 
+// navigator.onLine 
+// Listen for 
+// online 
+// offline 
+// Example →  You are offline
+
+// const connectivity=()=>{
+//     const result=document.getElementById("res");
+//     if(navigator.onLine){
+//         result.innerText="you are online";
+//     }
+//     else{
+//         result.innerText="you are offline";
+//     }
+// }
+// connectivity();
+
+// 60. Idle User Detection 
+// HTML Design 
+// User Dashboard 
+// Behaviour 
+// If user inactive for 30 seconds 
+// Show modal 
+// Are you still there? →  [Yes] 
+// If not confirmed → logout. 
+
+// let idleTime=3000;
+// let timer;
+// let isIdle=false;
+// let statusdiv=document.getElementById("result");
+
+// function setIdle(){
+//     isIdle=true;
+//     statusdiv.innerText="user is active";
+//     statusdiv.style.color="green";
+    
+// }
+
+// function setActive(){
+//     if(isIdle){
+//         statusdiv.textContent="user is active";
+//     statusdiv.style.color="green"
+//     }
+//     isIdle=false;
+//     clearTimeout(timer);
+//     timer=setTimeout(setIdle,idleTime);
+// }
+
+// ['mousemove','keyup','touchstart','scroll'].forEach((event)=>{
+//     document.addEventListener(event,setActive);
+// })
+
+// document.addEventListener('visibilitychange',()=>{
+//     if(document.hidden){
+//     statusdiv.textContent="user is notactive";
+//     statusdiv.style.color="red"
+
+//     }else{
+//      statusdiv.textContent="user is notactive";
+//     statusdiv.style.color="green"
+//     setActive();
+
+//     }
+// })
+// setActive();
