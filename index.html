@@ -10,22 +10,40 @@
          font-size: larger;
          font-weight: 200;
       }
+     
+
+    .step { display: none; } 
+
+    .active { display: block; } 
+
+    .error { color: red; } 
+
+  
    </style>
    <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
-   <!-- 1 -->
-   <!-- <div>
+   
+
+    <!-- <div id="parent">
+
+        <div id="header">Find Largest & Smallest Word </div> 
         <label for=""> Enter Sentence :</label>
         <input type="text" id="value">
         <div class="errorDiv"></div>
         <button type="button"  onclick="called()">Find Words</button>
         <div class="result"></div>
-     </div> -->
+  
+
+   </div> -->
+
 
    <!-- 2 -->
-   <!-- <div>
+
+
+   <!-- <div id="parent">
+      <div id="header"> Vowel or Not</div> 
         <label for=""> Vowel Checker :</label>
         <input type="text" id="value" placeholder="Enter single letter">
         <div class="errorDiv"></div>
@@ -34,7 +52,8 @@
      </div> -->
 
    <!-- 3 -->
-   <!-- <div>
+   <!-- <div  id="parent">
+      <div id="header"> Check First & Last Character Same </div>
         <label for="">First & Last Character Checker :</label>
         <input type="text" id="value" placeholder="Enter single letter">
         <div class="errorDiv"></div>
@@ -43,9 +62,10 @@
      </div> -->
 
    <!-- 4 -->
-   <!-- <div>
-        <label for="">Reverse String:</label>
-        <input type="text" id="value" placeholder="Enter single letter">
+   <!-- <div id="parent">
+      <div id="header">Reverse String </div>
+        <label for=""> String:</label>
+        <input type="text" id="value" placeholder="Enter a string">
         <div class="errorDiv"></div>
         <button type="button"  onclick="reverse()">Reverse</button>
         <div class="result"></div>
@@ -59,45 +79,49 @@
         <button type="button"  onclick="largest()">submit</button>
         <div class="result"></div>
      </div> -->
+<!-- ----------------------------------------------------------------------------- -->
+<!-- 6 -->
 
-   <!-- 6 -->
-   <!-- <div>
-        <label for="">Checkbox Manager:</label>
-        <input type="checkbox" class="checkbox-selection" >Option 1
-        <input type="checkbox" class="checkbox-selection" >Option 2
-        <input type="checkbox" class="checkbox-selection" >Option 3
-        <input type="checkbox" class="checkbox-selection" >Option 4
-        <input type="checkbox" class="checkbox-selection" >Option 5
-        
-       <button type="button"  onclick="checkall(true)">checkall</button>
-       <button type="button"  onclick="uncheckall(false)">uncheckall</button>
-       <button type="button"  onclick="toggle()">toggle</button>
-  
-     </div> -->
 
-   <!-- 7 -->
-   <!-- <div>
-        <label for=""> Sum and Multiply :</label>
+<!-- <div id="header"> Checkbox Controls </div> 
+<input type="checkbox" class="cb"> Option 1  
+<input type="checkbox" class="cb"> Option 2  
+<input type="checkbox" class="cb"> Option 3  
+<input type="checkbox" class="cb"> Option 4  
+<input type="checkbox" class="cb"> Option 5  
+
+<button onclick="checkAll()">Check All</button> 
+<button onclick="uncheckAll()">Uncheck All</button> 
+<button onclick="toggle()">Toggle</button>  -->
+
+<!-- ----------------------------------------------------------------------------- -->
+
+<!-- 7 -->
+<!-- <div>
+   <label for=""> Sum and Multiply :</label>
         <input type="text" id="value" placeholder="Enter  a Number">
         <input type="text" id="output" >
         <div class="errorDiv"></div>
         <button type="button"  onclick="add()">Add</button>
-         <button type="button"  onclick="multiply()">Multiply</button>
+        <button type="button"  onclick="multiply()">Multiply</button>
         <div class="result"></div>
-     </div> -->
-
-   <!-- 8 -->
-
-   <!-- <div>
-        <label for="">Enter Array elements:</label>
-        <input type="text" id="array-element" placeholder="Enter array elements">
-        <input type="text" id="index" placeholder="enter position" >
-        <input type="text" id="new-element" placeholder="enter new character">
-        <div class="errorDiv"></div>
-        <button type="button"  onclick="Replace()">Add</button>
-        <div class="result"></div>
-     </div>
-        -->
+      </div> -->
+      
+      <!-- ----------------------------------------------------------------------------- -->
+      <!-- 8 -->
+      
+      <!-- <div>
+         <label for="">Enter Array elements:</label>
+         <input type="text" id="array-element" placeholder="Enter array elements">
+         <input type="text" id="index" placeholder="enter position" >
+         <input type="text" id="new-element" placeholder="enter new character">
+         <div class="errorDiv"></div>
+         <button type="button"  onclick="Replace()">Add</button>
+         <div class="result"></div>
+      </div> -->
+      
+      <!-- ----------------------------------------------------------------------------- -->
+      
 
    <!-- 9 -->
    <!-- <button type="button" onclick="date_time()"> Show Date & Time </button>
@@ -127,6 +151,13 @@
    <!-- 12 -->
    <!-- <button onclick="search()">Get Params</button> 
 <div id="result"></div>  -->
+
+<!-- 13 -->
+
+ <!-- <div id="header">Cookie Counter (CFML + JS)</div>
+ <form method="post" id="form"> 
+<input type="submit" id="value" value="Submit"> 
+</form> -->
 
    <!-- 14 -->
    <!-- <div>
@@ -337,6 +368,13 @@
 
    <p id="result"></p>  -->
 
+   <!-- 33 -->
+   <!-- <h2>Drag file here or click to upload</h2> 
+<div id="dropArea">Drop Image Here</div> 
+ <input type="file" id="fileInput" hidden> 
+<p id="result"></p> 
+<img id="preview" />  -->
+
    <!-- 34.  -->
    <!-- <div class="kanban-board">
   <div class="column" id="todo">
@@ -506,7 +544,7 @@
    </dialog> -->
 
    <!-- 47 -->
- <!-- <div id="header">OTP Input UI</div>
+   <!-- <div id="header">OTP Input UI</div>
    <div id="inputs">
       <input type="text" class="input" inputmode="numeric" maxlength="1">
       <input type="text" class="input" inputmode="numeric" maxlength="1">
@@ -517,62 +555,135 @@
    </div> -->
 
    <!-- 48 -->
-    <!-- <div id="header">OTP Input UI</div>
-   <div id="inputs">
-      <input type="text" class="input" inputmode="numeric" maxlength="1">
-      <input type="text" class="input" inputmode="numeric" maxlength="1">
-      <input type="text" class="input" inputmode="numeric" maxlength="1">
-      <input type="text" class="input" inputmode="numeric" maxlength="1">
-      <input type="text" class="input" inputmode="numeric" maxlength="1">
-      <input type="text" class="input" inputmode="numeric" maxlength="1">
-   </div> -->
+   <!-- <div id="header">OTP Input UI</div>
+<input class="otp" maxlength="1" > 
+<input class="otp" maxlength="1" > 
+<input class="otp" maxlength="1" > 
+<input class="otp" maxlength="1" > 
+<input class="otp" maxlength="1" > 
+<input class="otp" maxlength="1" > -->
+
+   <!-- 49 -->
+   <!-- <div id="header"> Pagination (Basic) </div>
+<div id="list"></div> 
+<button onclick="prev()">Prev</button> 
+ <button onclick="next()">Next</button> -->
+
+   <!-- 50 -->
+
+<!-- <div id="header">API Pagination</div>
+<div id="data"></div> 
+<button onclick="load(0)">1</button> 
+<button onclick="load(1)">2</button> 
+<button onclick="load(2)">3</button> 
+<button onclick="load(3)">4</button> 
+<button onclick="load(4)">5</button> 
+<button onclick="load(5)">6</button>  -->
+
 
    <!-- 51 -->
-    <!-- <img src="https://cdn.pixabay.com/photo/2025/01/08/14/52/beach-9319305_1280.jpg" style="width:100%">
+    <!-- <div>
+       <img src="https://cdn.pixabay.com/photo/2025/01/08/14/52/beach-9319305_1280.jpg" style="width:100%">
     <img src="https://cdn.pixabay.com/photo/2025/01/08/14/52/beach-9319305_1280.jpg" style="width:100%">
     <img src="https://cdn.pixabay.com/photo/2025/01/08/14/52/beach-9319305_1280.jpg" style="width:100%">
     <img src="https://cdn.pixabay.com/photo/2025/01/08/14/52/beach-9319305_1280.jpg" style="width:100%">
     <img src="https://cdn.pixabay.com/photo/2025/01/08/14/52/beach-9319305_1280.jpg" style="width:100%">
-    <img src="https://cdn.pixabay.com/photo/2025/01/08/14/52/beach-9319305_1280.jpg" style="width:100%"> -->
+    <img src="https://cdn.pixabay.com/photo/2025/01/08/14/52/beach-9319305_1280.jpg" style="width:100%">
 
-    <!-- 52 -->
+    </div> -->
+  
 
-<!-- <img data-src="https://picsum.photos/300/200" class="lazy" width="300" loading="lazy"> 
+   <!-- 52 -->
+<!-- <div>
 <img data-src="https://picsum.photos/300/200" class="lazy" width="300" loading="lazy"> 
 <img data-src="https://picsum.photos/300/200" class="lazy" width="300" loading="lazy"> 
 <img data-src="https://picsum.photos/300/200" class="lazy" width="300" loading="lazy"> 
 <img data-src="https://picsum.photos/300/200" class="lazy" width="300" loading="lazy"> 
 <img data-src="https://picsum.photos/300/200" class="lazy" width="300" loading="lazy"> 
 <img data-src="https://picsum.photos/300/200" class="lazy" width="300" loading="lazy"> 
-<img data-src="https://picsum.photos/300/200" class="lazy" width="300" loading="lazy">  -->
+<img data-src="https://picsum.photos/300/200" class="lazy" width="300" loading="lazy"> 
+<img data-src="https://picsum.photos/300/200" class="lazy" width="300" loading="lazy"> 
 
-<!-- 54 -->
+</div> -->
 
-<!-- <form action="">
+
+<!-- 53 -->
+
+<!-- <div id="header"> Global Event Bus (Custom Event System)</div> 
+
+ 
+
+<button onclick="loginUser()">Login</button> 
+
+<div id="result"></div>
+<div id="result1"></div> -->
+
+   <!-- 54 -->
+
+   <!-- <form action="">
    <label for="">Name:</label><input type="text" id="savevalue">
    <label for="">Email:</label><input type="email" id="savevalue1">
    <label for="">Message</label><input type="message" id="savevalue2">
    <button type="button" onclick="removevalue()">remove</button>
 </form> -->
 
-<!-- 56 -->
+<!-- 55 -->
+  <!-- <div id="header">API Request Loader with Retry:</div>
+<button onclick="fetchData()">Fetch</button>
+<div id="result"></div> -->
+
+   <!-- 56 -->
    <!-- <div id="header">Search with Highlighted Matches:</div>
    <div>
       <input type="text" id="search-input">
       <div id="content">javascript is a scropting language ,and its variously used in many ways</div>
    </div> -->
 
+   <!-- 57 -->
 
-<!-- 59 -->
-  <!-- <div id="header">Detect Internet Connection Status:</div>
+   <!-- <div id="header">Undo / Redo System :</div>
+
+<input id="inputField">
+<button type="submit" id="undoBtn">Undo</button>
+<button type="button" id="redoBtn">Redo</button> -->
+
+   <!-- 58 -->
+
+    <!-- <form id="multiStepForm">
+ <div class="step" id="step1">
+    <div>Personal info</div>
+    <input type="text" placeholder="First Name" id="firstName" required>
+    <input type="text" placeholder="Last Name" id="lastName" required>
+    <button type="button" onclick="nextStep()">Next</button>
+  </div>
+
+
+  <div class="step" id="step2" style="display:none;">
+    <div> Address </div>
+    <input type="text" placeholder="address" id="address">
+   
+    <button type="button" onclick="prevStep()">Previous</button>
+    <button type="button" onclick="nextStep()">Next</button>
+  </div>
+
+
+  <div class="step" id="step3" style="display:none;">
+    <div>Review</div>
+    <p>Review your details before submitting</p>
+    <button type="button" onclick="prevStep()">Previous</button>
+    <button type="submit">Submit</button>
+  </div>
+</form> -->
+
+
+
+   <!-- 59 -->
+   <!-- <div id="header">Detect Internet Connection Status:</div>
  <div id="res"></div> -->
 
- <!-- 60 -->
-   <div id="header">Idle User Detection :</div>
-
-   <div>
-         <div id="result"></div>
-   </div>
+   <!-- 60 -->
+   <!-- <div id="header"> Idle User Detection :</div>
+   <p>Active Page</p>  -->
    <script src="./index.js"></script>
 </body>
 

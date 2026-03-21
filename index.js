@@ -23,7 +23,8 @@
 // let min="";
 // let max="";
 // if(val==""){
-//   document.getElementsByClassName("errorDiv")[0].innerHTML="*please enter a string value"
+//   document.getElementsByClassName("result")[0].textContent="";
+//   document.getElementsByClassName("errorDiv")[0].innerHTML="*please enter a sentence"
 // }
 // else{
 //     let input=val.split(" ");
@@ -37,12 +38,12 @@
 //             max = ele;
 //         }
 
-
-
+//  document.getElementsByClassName("errorDiv")[0].innerHTML="";
+// document.getElementsByClassName("result")[0].textContent=`Min word [${min}] Max word [${ max }]`;
+// console.log(min,max);
 // })
 
-// document.getElementsByClassName("result")[0].textContent=`Min word and Max word [${min , max }]`;
-// console.log(min,max);
+
 // }
 // }
 
@@ -77,10 +78,12 @@
 // else{
 //     if(val=='a'||val=='e'||val=='i'||val=='o'||val=='u'||val=='A'||val=='E'||val=='I'||val=='O'||val=='U'){
 //  document.getElementsByClassName("result")[0].innerHTML="vowel";
+//  document.getElementsByClassName("errorDiv")[0].innerHTML=""
 // }
 // else{
 
 //       document.getElementsByClassName("result")[0].innerHTML=" NOT vowel";
+//       document.getElementsByClassName("errorDiv")[0].innerHTML=""
 // }
 
 // }
@@ -115,16 +118,19 @@
 
 // else{
 //  if(val[0]===val[val.length-1]){
-//        alert("first and last characters match.")
+//    document.getElementsByClassName("result")[0].innerHTML="";
+//    setTimeout(() => {
+//      alert("first and last characters match.");
+// }, 0);
 //     }
 // else{
-
+//         document.getElementsByClassName("errorDiv")[0].innerHTML="";
 //       document.getElementsByClassName("result")[0].innerHTML=" NOT  match";
 // }
 
 // }
 // }
-
+// -----------------------------------------------------------------------------------
 // 4. Reverse String 
 // HTML Design 
 // • Title: Reverse String 
@@ -161,7 +167,7 @@
 // }
 
 // }
-
+// -----------------------------------------------------------------------------------
 // 5. Find Largest Number 
 // HTML Design 
 // • Title: Largest Number Finder 
@@ -192,21 +198,24 @@
 //     let large=0;
 //    for(let ele of num){
 //     if(!Number(ele)){
-//         document.getElementsByClassName("errorDiv")[0].innerHTML="*please enter a number";
+//       document.getElementsByClassName("result")[0].innerHTML="";
+//               document.getElementsByClassName("errorDiv")[0].innerHTML="*please enter a number";
 //     }
-//     else{
-//          if(large<ele){
+//     else if(large< ele){
 //           large=ele;
 //     }
 
+//   }
+
+
+//     if(document.getElementsByClassName("errorDiv")[0].innerHTML===""){
+//       document.getElementsByClassName("result")[0].innerHTML=large;
 //     }
-
-
 //    }
-//   document.getElementsByClassName("result")[0].innerHTML=large;
 // }
 
-// }
+
+// -----------------------------------------------------------------------------------
 
 // 6. Checkbox Controls 
 // HTML Design 
@@ -238,24 +247,24 @@
 //     }
 // }
 //  let checked="false";
-// const toggle=()=>{
- 
-//    let checkboxes = document.getElementsByClassName("checkbox-selection");
-//    if(checkboxes.checked!="true"){
-//         for (let i = 0; i < checkboxes.length; i++) {
-//         checkboxes[i].checked = checked;
-//     }
-//     checked=true;
-//    }
-//   else{
-//     for (let i = 0; i < checkboxes.length; i++) {
-//         checkboxes[i].checked = checked;
-//     }
-//     checked=false;
-//   }
-// }
 
-   
+//    let checkboxes = document.getElementsByClassName("cb"); 
+//  function checkAll(){ 
+//   for(let i=0; i<checkboxes.length; i++){ 
+//     checkboxes[i].checked = true; 
+//   } 
+// } 
+// function uncheckAll(){ 
+//   for(let i=0; i<checkboxes.length; i++){ 
+//     checkboxes[i].checked = false; 
+//   } 
+// } 
+// function toggle(){ 
+// for(let i=0; i<checkboxes.length; i++){ 
+//         checkboxes[i].checked = !checkboxes[i].checked; 
+//   } 
+// } 
+// -----------------------------------------------------------------------------------
 
 // 7. Sum & Multiply Numbers 
 // HTML Design 
@@ -331,6 +340,8 @@
 
 // }
 
+// -----------------------------------------------------------------------------------
+
 // 8. Replace Element in Array 
 // HTML Design 
 // • Textbox 1: Array elements (A,B,C,D) 
@@ -381,13 +392,14 @@
 //     indexerror.innerHTML="*please enter a Number";
 // }
 // else{
-//    originalArr[out]=new_position;
+//    originalArr[out-1]=new_position;
 
 // }
 //   document.getElementsByClassName("result")[0].innerHTML=`changed array :${originalArr}`;
 // console.log(originalArr);
 // }
 
+// -----------------------------------------------------------------------------------
 // 9. Show Date & Time 
 // HTML Design 
 // • Single Button 
@@ -399,10 +411,23 @@
 
 // function date_time(){
 //     const date=new Date();
-//     const output=date.toLocaleString();
+
+//     const options = {
+//   day: '2-digit',
+//   month: 'short',
+//   year: 'numeric',
+//   hour: '2-digit',
+//   minute: '2-digit',
+//   hour12: true
+// };
+
+// // Format using Intl.DateTimeFormat
+// const formattedDate = new Intl.DateTimeFormat('en-GB', options).format(date);
 //     console.log(output);
-//     document.getElementsByClassName("result")[0].innerHTML=`Current Date & Time:${output}`;
+//     document.getElementsByClassName("result")[0].innerHTML=`Current Date & Time:${formattedDate}`;
 // }
+
+// -----------------------------------------------------------------------------------
 
 // 10. Registration Form 
 // HTML Design 
@@ -454,7 +479,7 @@
 // }
 // event.preventDefault();
 // }
-
+// -----------------------------------------------------------------------------------
 // 11. Get Full URL 
 // HTML Design 
 // Button + Result 
@@ -496,6 +521,31 @@
 
 // }
 
+// 13. Cookie Counter (CFML + JS) 
+// HTML Design 
+// Button + message 
+// <form method="post"> 
+// <input type="submit" value="Submit"> 
+// </form> 
+// Flow 
+// 1. Page loads 
+// 2. CFML creates cookie VisitsCounter 
+// 3. Increment every submit 
+// 4. JS alert shows value 
+// Example 
+// alert("Visits: 5"); 
+
+// let login=document.getElementById('form');
+// let count=0;
+// login.addEventListener('submit',(e)=>{
+//     e.preventDefault();
+    
+//     let value=document.getElementById('value').value;
+//     console.log("user submit button",value);
+//     count++;
+//     alert("visits :"+count);
+// })
+
 // 14. Count Words in a Sentence 
 // HTML Design 
 // • Title: Word Counter 
@@ -515,7 +565,7 @@
 // const val=document.getElementById("value").value;
 // let count=0;  
 // const cleaned =/[^a-zA-Z0-9\s]/g; 
-//     let input=cleaned.split(" ");
+//     let input=val.split(" ");
 // if(val==""){
 //   document.getElementsByClassName("errorDiv")[0].innerHTML= "Please enter a sentence" ;
 // }
@@ -1270,6 +1320,49 @@
 // • Display file name 
 // • Validate image only
 
+// let dropArea = document.getElementById("dropArea"); 
+// let fileInput = document.getElementById("fileInput"); 
+// let result = document.getElementById("result"); 
+// let preview = document.getElementById("preview"); 
+
+// dropArea.onclick = () => fileInput.click(); 
+
+// dropArea.ondragover = e => { 
+//   e.preventDefault(); 
+//   dropArea.classList.add("hover"); 
+// }; 
+
+// dropArea.ondragleave = () => { 
+//   dropArea.classList.remove("hover"); 
+// }; 
+// dropArea.ondrop = e => { 
+//   e.preventDefault(); 
+//   dropArea.classList.remove("hover"); 
+//   handleFile(e.dataTransfer.files[0]);
+// }; 
+ 
+// fileInput.onchange = () => { 
+//   handleFile(fileInput.files[0]); 
+// }; 
+
+// function handleFile(file){ 
+//   if(!file) {
+//     return;
+//   } 
+//   if(file.type.startsWith("image/")){ 
+//     result.innerText = "File:" + file.name; 
+//     let reader = new FileReader(); 
+//     reader.onload = e => { 
+//       preview.src = e.target.result; 
+//     }; 
+//     reader.readAsDataURL(file); 
+//   } else { 
+//     result.innerText ="Only image files allowed"; 
+//     preview.src =""; 
+//   } 
+// }
+
+
 // 34. Kanban Board Drag & Drop 
 // HTML Design 
 // TODO          IN PROGRESS          DONE ---------------------------------------- 
@@ -1725,6 +1818,59 @@
 // • Auto move to next box 
 // • Backspace goes to previous. 
 
+// script.js
+// const inputs = document.getElementById("inputs");
+
+// inputs.addEventListener("input", function (e) {
+//     const target = e.target;
+//     const val = target.value;
+
+//     if (isNaN(val)) {
+//         target.value = "";
+//         return;
+//     }
+
+//     if (val != "") {
+//         const next = target.nextElementSibling;
+//         if (next) {
+//             next.focus();
+//         }
+//     }
+// });
+
+// inputs.addEventListener("keyup", function (e) {
+//     const target = e.target;
+//     const key = e.key.toLowerCase();
+
+//     if (key == "backspace" || key == "delete") {
+//         target.value = "";
+//         const prev = target.previousElementSibling;
+//         if (prev) {
+//             prev.focus();
+//         }
+//         return;
+//     }
+// });
+
+// 48. OTP Paste Feature 
+// Behaviour 
+// User pastes 
+// 123456 
+// Automatically fills all boxes. 
+
+
+// let inputs = document.querySelectorAll(".otp"); 
+// inputs[0].addEventListener("paste", function(e){ 
+// let data = e.clipboardData.getData("text").split(""); 
+// inputs.forEach((input, i)=>{ 
+// input.value = data[i] ||""; 
+// }); 
+
+// });  
+
+
+
+
 // 49. Pagination (Basic) 
 // HTML Design 
 // User List 
@@ -1738,25 +1884,60 @@
 // Behaviour 
 // Show 10 items per page
 
-// const listItems = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]; // Data
-// let currentPage = 1;
-// let rows = 5; // Items per page
+//  let list=document.getElementById("list");
+// let items = Array.from({length:50},(_,i)=>"Item"+(i+1)); 
+// let page = 0, size = 10; 
+// function show(){ 
+//   list.innerHTML = items.slice(page*size,(page+1)*size).join("<br>"); 
+// } 
+// function next()
+// { 
+// if((page+1)*size < items.length){ page++; show(); }
+//  } 
+// function prev(){ if(page>0){ page--; show(); } } 
+// show(); 
 
-// function displayList(items, wrapper, rowsPerPage, page) {
-//     wrapper.innerHTML = ""; // Clear old items
-//     page--; // Adjust for zero-based index
+// 50. API Pagination 
+// HTML Design 
+// Products Table 
+ 
+// Pagination → 1 2 3 4 5 
+ 
+// Behaviour 
+// Fetch data from API 
+// Example 
+// ?page=1 
+// ?page=2
 
-//     let start = rowsPerPage * page;
-//     let end = start + rowsPerPage;
-//     let paginatedItems = items.slice(start, end);
+// let result;
+// let data=document.getElementById('data');
+// async function load(pages){ 
 
-//     paginatedItems.forEach(item => {
-//         let itemElement = document.createElement("div");
-//         itemElement.innerText = item;
-//         wrapper.appendChild(itemElement);
+//   let res = await fetch(`https://dummyjson.com/products/${pages}`); 
+//   let output= await res.json(); 
+//  data.innerText=JSON.stringify(output);
+        
+//     };
+
+// let result="";
+
+// let data=document.getElementById('data');
+// async function load(val) {
+//      let page=val;
+//    let size=10;
+  
+//     result="";
+//     let res=await  fetch("https://jsonplaceholder.typicode.com/posts");
+//     let output= await res.json();
+//     const limit=output.slice(page*size,(page+1)*size);
+//     console.log(limit);
+//     limit.forEach(data1=> {
+//         console.log(data1.title)
+//         result+=`${JSON.stringify(data1)}<br>`
+//         data.innerHTML=JSON.stringify(result);
+        
 //     });
 // }
-
 
 // 51. Debounce vs Throttle Scroll Logger 
 // HTML Design 
@@ -1818,7 +1999,45 @@
 // }); 
 // images.forEach(img => observer.observe(img));
 
- 
+// 53. Global Event Bus (Custom Event System) 
+// Task 
+// Create a simple publish/subscribe event system. 
+// Example 
+// eventBus.subscribe("userLogin", callback) 
+// eventBus.publish("userLogin", {name:"John"}) 
+// Behaviour 
+// Multiple components can listen to same event. 
+
+// let res=document.getElementById('result');
+// let res1=document.getElementById('result1');
+// const eventBus = { 
+//     events: {}, 
+//     subscribe(eventName, callback) { 
+//         if (!this.events[eventName]) { 
+//             this.events[eventName] = []; 
+//         } 
+//         this.events[eventName].push(callback); 
+//     }, 
+//     publish(eventName, data) { 
+//         if (this.events[eventName]) { 
+//             this.events[eventName].forEach(cb => cb(data)); 
+//         } 
+//     } 
+// }; 
+// eventBus.subscribe("userLogin", (data) => { 
+//     console.log("Subscriber 1:", data.name); 
+//     res.innerText=`Subscriber 1:${data.name}`;
+// }); 
+// eventBus.subscribe("userLogin", (data) => { 
+//     console.log("Subscriber 2:", data.name); 
+//     res1.innerText=`Subscriber 2:${data.name}`;
+// }); 
+// function loginUser() { 
+
+//     eventBus.publish("userLogin", { name: "John" }); 
+
+// } 
+
 // 54.Local Storage Form Auto Save 
 // HTML Design 
 // Name 
@@ -1881,6 +2100,23 @@
 // Retrying request... 
 // Error: Failed after 3 attempts 
 
+// let result=document.getElementById("result");
+
+// async function fetchData(retry=3){ 
+//   result.innerText = "Loading…"; 
+//   try{ 
+//     let res = await fetch("https://jsonplaceholder.typicode.com/users"); 
+//     let data = await res.json(); 
+//     result.innerText = JSON.stringify(data); 
+//   }catch{ 
+//     if(retry>0){ 
+//       result.innerText = "Retrying…"; 
+//       fetchData(retry-1); 
+//     }else{ 
+//       result.innerText = "Failed after retries"; 
+//     } 
+//   } } 
+
 // 56. Search with Highlighted Matches 
 // HTML Design 
 // Search: [ react ] 
@@ -1903,6 +2139,109 @@
 //     contentElement.innerHTML = newHTML;
 // })
 
+
+// 57.
+
+// 57. Undo / Redo System 
+// HTML Design 
+// Input Field 
+ 
+// [Undo] [Redo] 
+// Behaviour 
+// User types 
+// Hello 
+// Hello World 
+// Hello World JS 
+// Undo 
+// Hello World 
+// Hello 
+// Redo 
+// Hello World 
+// Hello World JS
+
+// let history = [], redoStack = []; 
+// input.oninput = (out2)=>{ 
+//   let out=out2.target.value;
+//   console.log(out)
+  
+//   if(out.includes(" ")){
+//     let words=out.split(' ');
+//     words.forEach(element => {
+//      history.push(element)
+//      redoStack = [];
+//         });
+// }
+//     }; 
+// function undo(){ 
+//   if(history.length>1){ 
+//     redoStack.push(history.pop()); 
+//     console.log('history: ', history);
+//     input.value = history.join(" "); 
+//   }  
+// } 
+// function redo(){ 
+//   if(redoStack.length){ 
+//     let val =redoStack.pop(); 
+//     console.log("popeddd"+val);
+//     history.push(val); 
+   
+//     input.value =history; 
+//   } 
+// }
+
+
+ 
+ 
+// document.addEventListener('DOMContentLoaded', () => {
+//     const inputField = document.getElementById('inputField');
+//     const undoBtn = document.getElementById('undoBtn');
+//     const redoBtn = document.getElementById('redoBtn');
+//     let h= [''];
+//     let history = 0;
+//     function updateState(newState) {
+//         if (history < h.length - 1) {
+//             h = h.slice(0, history + 1);
+//         }
+//     h.push(newState);
+//         history++;
+//         updateButtonStates();
+//     }
+//     function undo() {
+//         if (history > 0) {
+//             history--;
+//             inputField.value = h[history];
+//             updateButtonStates();
+//         }
+//     }
+//     function redo() {
+//         if (history < h.length - 1) {
+//             history++;
+//             inputField.value = h[history];
+//             updateButtonStates();
+//         }
+//     }
+//     function updateButtonStates() {
+//         undoBtn.disabled = history === 0;
+//         redoBtn.disabled = history === h.length - 1;
+//     }
+//     inputField.addEventListener('keydown', (event) => {
+//         if (event.key === ' ') {
+//             setTimeout(() => {
+//                 updateState(inputField.value);
+//             }, 0);
+//         }
+//     });
+//         inputField.addEventListener('blur', () => {
+//         if (inputField.value !== h[history]) {
+//             updateState(inputField.value);
+//         }
+//     });
+//     undoBtn.addEventListener('click', undo);
+//     redoBtn.addEventListener('click', redo);
+//     updateButtonStates();
+// });
+ 
+
 // 58. Multi Step Form Wizard 
 // HTML Design 
 // Step 1: Personal Info 
@@ -1914,6 +2253,51 @@
 // • Validate each step 
 // • Save progress 
 // • Prevent skipping steps.
+
+// let step1=document.getElementById("step1");
+// let step2=document.getElementById("step2");
+
+
+// function next(){ 
+//   step1.style.display="none"; 
+//   step2.style.display="block"; 
+ 
+ 
+// } 
+// function prev(){ 
+//   step2.style.display="none"; 
+//   step1.style.display="block"; 
+ 
+// } 
+
+// const steps = document.querySelectorAll('.step');
+// let currentStep = 0;
+
+// function showStep(stepIndex) {
+//   steps.forEach((step, index) => {
+//     step.style.display = index === stepIndex ? 'block' : 'none';
+//   });
+// }
+// function nextStep() {
+//   if (currentStep < steps.length - 1) {
+//     currentStep++;
+//     showStep(currentStep);
+//   }
+// }
+// function prevStep() {
+//   if (currentStep > 0) {
+//     currentStep--;
+//     showStep(currentStep);
+//   }
+// }
+// document.getElementById('multiStepForm').addEventListener('submit', function(event) {
+//   event.preventDefault();
+
+//   alert('Form submitted successfully!');
+// });
+// document.addEventListener('DOMContentLoaded', () => {
+//     showStep(currentStep);
+// });
 
 
 
@@ -1951,42 +2335,18 @@
 // Are you still there? →  [Yes] 
 // If not confirmed → logout. 
 
-// let idleTime=3000;
-// let timer;
-// let isIdle=false;
-// let statusdiv=document.getElementById("result");
 
-// function setIdle(){
-//     isIdle=true;
-//     statusdiv.innerText="user is active";
-//     statusdiv.style.color="green";
-    
-// }
+// let timer; 
+// function reset(){ 
+//   clearTimeout(timer); 
+//   timer = setTimeout(()=>{ 
+//     alert("Are you still there?"); 
+//   },3000); 
+// } 
+// ["mousemove","keydown","click"].forEach(evt=>{ 
+//   window.addEventListener(evt, reset); 
+// }); 
+// reset(); 
 
-// function setActive(){
-//     if(isIdle){
-//         statusdiv.textContent="user is active";
-//     statusdiv.style.color="green"
-//     }
-//     isIdle=false;
-//     clearTimeout(timer);
-//     timer=setTimeout(setIdle,idleTime);
-// }
 
-// ['mousemove','keyup','touchstart','scroll'].forEach((event)=>{
-//     document.addEventListener(event,setActive);
-// })
 
-// document.addEventListener('visibilitychange',()=>{
-//     if(document.hidden){
-//     statusdiv.textContent="user is notactive";
-//     statusdiv.style.color="red"
-
-//     }else{
-//      statusdiv.textContent="user is notactive";
-//     statusdiv.style.color="green"
-//     setActive();
-
-//     }
-// })
-// setActive();
